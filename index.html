@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack-O-Lantern</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <img src="ghost-2.png" id="ghost-1"> 
+    <header id="head">SPOOKCHAT</header>
+    <img src="ghost-2.png" id="ghost-2">
+
+    <div id="container">
+      <video autoplay="true" id="videoElement">
+      </video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
+    <canvas id="deepar-canvas"></canvas>
+    <script type="text/javascript" src="DeepAR/deepar.js"></script>
+    <script type="text/javascript">
+    
+      // Initialize the DeepAR object
+      var deepAR = DeepAR({
+        licenseKey: 'ef085f7d13443d5ca4627c572b5084e85a36f376430cfed108df816aa04e7b3887094f80c27d1da0',
+        canvasWidth: 600,
+        canvasHeight: 600,
+        canvas: document.getElementById('deepar-canvas'),
+        numberOfFaces: 1, // how many faces we want to track min 1, max 4
+        onInitialize: function() {
+          // start video immediately after the initalization, mirror = true
+          deepAR.startVideo(true);
+          // load the aviators effect on the first face into slot 'slot'
+          deepAR.switchEffect(0, 'slot', './aviators', function() {
+            // effect loaded
+          });
+        }
+      });
+    
+      // download the face tracking model
+      deepAR.downloadFaceTrackingModel('DeepAR/models-68-extreme.bin');
+    </script>
+    <!-- <img src="jack.png" id="jack"> -->
+</body>
+</html>

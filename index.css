@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
+@import url("http://fonts.cdnfonts.com/css/monster-pumpkin");
+
+html {
+  overflow-x: hidden;
+  font-family: "Zen Kurenaido", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgb(34, 27, 68), rgb(18, 18, 19));
+}
+
+#ghost-1 {
+  transform: scaleX(-1);
+  animation-name: ghost-1-appear;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  margin-left: -170px;
+}
+
+#ghost-2 {
+  float: right;
+  margin-right: -100px;
+  padding-bottom: 5px;
+  height: 150px;
+  width: auto;
+  animation-name: ghost-2-appear;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  margin-top: 450px;
+}
+
+#head {
+  text-align: center;
+  color: rgb(255, 166, 0);
+  font-size: 100px;
+  margin-top: -225px;
+  padding-bottom: 0px;
+  font-weight: bolder;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  font-family: "Monster Pumpkin";
+  text-shadow: 3.5px 3.5px white;
+}
+
+.text {
+  width: 800px;
+  text-align: justify;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+#container {
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 600px;
+  border-radius: 100%;
+  overflow: auto;
+  position: relative;
+  left: 30px;
+  transform: scale(1.05);
+}
+#videoElement {
+  margin: auto;
+  display: block;
+  width: 530px;
+  height: 530px;
+  background-image: linear-gradient(rgb(34, 27, 68), rgb(18, 18, 19));
+  border-radius: 100%;
+  border: 5px orange solid;
+  position: absolute;
+  padding: 10px;
+  position: absolute;
+  left: 20px;
+}
+
+#jack {
+  float: left;
+  top: 580px;
+  left: 20px;
+  padding-bottom: 0px;
+  overflow-y: hidden;
+  height: 200px;
+  width: auto;
+  position: absolute;
+}
+
+@keyframes ghost-1-appear {
+  100% {
+    margin-left: -25px;
+  }
+}
+@keyframes ghost-2-appear {
+  100% {
+    margin-right: 0px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
